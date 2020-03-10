@@ -297,6 +297,8 @@ link_directories(
 # 开启调试信息
 #set(CMAKE_BUILD_TYPE "Debug")
 #set(CMAKE_BUILD_TYPE "Release")
+
+
 #set(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g2 -ggdb")
 #set(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
  
@@ -310,5 +312,7 @@ link_directories(
 
 add_executable(camera_test src/camera_test.cpp)
 target_link_libraries(camera_test    ${OpenCV_LIBS})
+
+#1
 
 
