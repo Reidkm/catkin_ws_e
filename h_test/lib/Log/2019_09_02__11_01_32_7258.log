@@ -1,0 +1,85 @@
+      742	INFO      	Log	XnLog.cpp	349	New log started on 2019-09-02 11:01:32
+      773	INFO      	Log	XnLog.cpp	322	--- Filter Info --- Minimum Severity: VERBOSE
+      797	VERBOSE   	OniContext	OniContext.cpp	167	OpenNI 2.3.0 (Build 15)-Linux-x86 (Jan 24 2019 15:24:42)
+      882	VERBOSE   	OniContext	OniContext.cpp	170	Configuration file found at '/home/reid/catkin_ws/src/h_test/lib/OpenNI.ini'
+      941	VERBOSE   	OniContext	OniContext.cpp	262	Using '/home/reid/catkin_ws/src/h_test/lib/OpenNI2/Drivers' as driver path
+      954	VERBOSE   	OniContext	OniContext.cpp	270	Looking for drivers at '/home/reid/catkin_ws/src/h_test/lib/OpenNI2/Drivers'
+     1064	VERBOSE   	OniContext	OniContext.cpp	312	Loading device driver 'libAXonLink.so'...
+     1675	INFO      	Log	XnLog.cpp	349	New log started on 2019-09-02 11:01:32
+     1694	INFO      	Log	XnLog.cpp	322	--- Filter Info --- Minimum Severity: VERBOSE
+     1707	VERBOSE   	xnUSB	XnLinuxUSB.cpp	391	Initializing USB...
+     5433	INFO      	xnUSB	XnLinuxUSB.cpp	420	USB is initialized.
+     5500	INFO      	OniDeviceDriver	OniDeviceDriver.cpp	138	Device connected: AXonIntelligence AXonLink (6006/1001@3/53)
+     5573	INFO      		AXonOniDriver.cpp	307	AXonLink Configuration File found at /home/reid/catkin_ws/src/h_test/lib/OpenNI2/Drivers/AXonLink.ini
+
+     5596	VERBOSE   	OniContext	OniContext.cpp	312	Loading device driver 'libOniFile.so'...
+     5904	VERBOSE   	OniContext	OniContext.cpp	312	Loading device driver 'libPS1080.so'...
+     6534	INFO      	Log	XnLog.cpp	349	New log started on 2019-09-02 11:01:32
+     6553	INFO      	Log	XnLog.cpp	322	--- Filter Info --- Minimum Severity: VERBOSE
+     6569	VERBOSE   	xnUSB	XnLinuxUSB.cpp	391	Initializing USB...
+    11068	INFO      	xnUSB	XnLinuxUSB.cpp	420	USB is initialized.
+    11123	VERBOSE   	OniContext	OniContext.cpp	312	Loading device driver 'libPSLink.so'...
+    11668	INFO      	Log	XnLog.cpp	349	New log started on 2019-09-02 11:01:32
+    11708	INFO      	Log	XnLog.cpp	322	--- Filter Info --- Minimum Severity: VERBOSE
+    11729	VERBOSE   	xnUSB	XnLinuxUSB.cpp	391	Initializing USB...
+    16424	INFO      	xnUSB	XnLinuxUSB.cpp	420	USB is initialized.
+    16521	VERBOSE   	OniContext	OniContext.cpp	464	Trying to open device by URI '(NULL)'
+    16684	VERBOSE   	xnUSB	XnLinuxUSB.cpp	434	Starting libusb asynch thread...
+    16738	WARNING   	xnOS	XnLinuxThreads.cpp	185	Failed to set thread priority (1)
+    16753	WARNING   	xnUSB	XnLinuxUSB.cpp	452	USB events thread: Failed to set thread priority to critical. This might cause loss of data...
+    65390	INFO      	AXonLinkDevice	AXonLinkDevice.cpp	1655	serial number len=17, val=M5D01419211000293
+    75896	INFO      	AXonLinkDevice	AXonLinkDevice.cpp	1665	hardware version 0
+    88349	INFO      	AXonLinkDevice	AXonLinkDevice.cpp	1683	firmware version 0.5.15.1 data 2019-8-14 14:57:40
+    98774	INFO      	AXonLinkDevice	AXonLinkDevice.cpp	1698	software version 0 data 2019-8-14 14:57:40
+   194412	INFO      	AXonLinkDevice	AXonLinkDevice.cpp	697	set frame sync threshold 200
+   194485	INFO      	AXonLinkDevice	AXonLinkDevice.cpp	719	set frame sync max frames 5
+   256909	INFO      	AXonLinkINEP	AXonLinkInputEndpoint.cpp	47	Link input data tablelist 1 max packet size is 512 bytes
+   267336	INFO      	AXonLinkStream	AXonLinkStreamBase.cpp	91	stream 2 get packet size.65536
+   298635	WARNING   	AXonLinkStream	AXonLinkStreamBase.cpp	299	SetCropping NOT Implemented
+   319662	INFO      	AXonLinkDepth	AXonLinkDepthInputFrame.cpp	44	Depth Create 12Bits Parser
+   319714	VERBOSE   	xnUSB	XnLinuxUSB.cpp	1667	Starting a USB read thread...
+   320267	INFO      	xnUSB	XnLinuxUSB.cpp	1764	USB read thread was started.
+   320434	WARNING   	xnOS	XnLinuxThreads.cpp	185	Failed to set thread priority (1)
+   320499	WARNING   	xnUSB	XnLinuxUSB.cpp	1464	Failed to set thread priority to critical. This might cause loss of data...
+   403656	INFO      	AXonLinkINEP	AXonLinkInputEndpoint.cpp	47	Link input data tablelist 0 max packet size is 512 bytes
+   414037	INFO      	AXonLinkStream	AXonLinkStreamBase.cpp	91	stream 1 get packet size.65536
+   922818	WARNING   	AXonLinkStream	AXonLinkStreamBase.cpp	299	SetCropping NOT Implemented
+   922990	INFO      	AXonLinkColor	AXonLinkUVCInputFrame.cpp	46	Creat jepg codec parser
+   923018	VERBOSE   	xnUSB	XnLinuxUSB.cpp	1667	Starting a USB read thread...
+   923570	INFO      	xnUSB	XnLinuxUSB.cpp	1764	USB read thread was started.
+   923596	WARNING   	xnOS	XnLinuxThreads.cpp	185	Failed to set thread priority (1)
+   923624	WARNING   	xnUSB	XnLinuxUSB.cpp	1464	Failed to set thread priority to critical. This might cause loss of data...
+  1007312	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 0.00 Color: 0.00 
+  1459823	ERROR     	AXonLinkDevice	AXonLinkDevice.cpp	1373	Set Registraion should not set Mirror
+  1459896	ERROR     	RetValChecks	AXonLinkDevice.cpp	975	Failed to Enable Registration: Unknown Xiron Status!
+  1459912	ERROR     	RetValChecks	AXonOniDevice.cpp	409	Failed to Set Registration: Unknown Xiron Status!
+  2001005	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 0.00 Color: 0.00 
+  3000201	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 20.84 Color: 19.91 
+  3156434	ERROR     	AXonLinkDevice	AXonLinkDevice.cpp	1373	Set Registraion should not set Mirror
+  3156479	ERROR     	RetValChecks	AXonLinkDevice.cpp	975	Failed to Enable Registration: Unknown Xiron Status!
+  3156500	ERROR     	RetValChecks	AXonOniDevice.cpp	409	Failed to Set Registration: Unknown Xiron Status!
+  4083012	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.05 Color: 20.97 
+  5008388	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.58 Color: 21.24 
+  6002546	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.63 Color: 21.30 
+  7002004	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.93 Color: 21.58 
+  8001875	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.71 Color: 21.38 
+  9001147	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.68 Color: 21.34 
+ 10081804	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.70 Color: 21.37 
+ 11001383	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.67 Color: 21.34 
+ 12001124	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.67 Color: 21.33 
+ 13003921	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.90 Color: 21.56 
+ 14004979	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.60 Color: 21.27 
+ 15004613	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.64 Color: 21.30 
+ 16015682	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.86 Color: 21.52 
+ 17014921	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.56 Color: 21.22 
+ 18012289	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.92 Color: 21.58 
+ 19011950	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.69 Color: 21.36 
+ 20019203	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.96 Color: 21.62 
+ 21017183	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.60 Color: 21.26 
+ 22012828	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.62 Color: 21.29 
+ 23058589	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.65 Color: 21.32 
+ 24019917	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.63 Color: 21.29 
+ 25026901	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.86 Color: 21.53 
+ 26031042	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.87 Color: 21.53 
+ 27027771	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.90 Color: 21.56 
+ 28025534	VERBOSE   	OniContext	OniContext.cpp	1165	[FPS] Depth: 21.68 Color: 21.34 
