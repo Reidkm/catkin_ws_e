@@ -1,0 +1,24 @@
+astColorParam x =640
+astColorParam y =480
+astColorParam fx =412.57083
+astColorParam fy =414.97961
+astColorParam cx =324.69931
+astColorParam cy =239.38878
+astColorParam k1 =6.18649
+astColorParam k2 =7.25279
+astColorParam p1 =0.00088
+astColorParam p2 =-0.00139
+astColorParam k3 =3.24829
+astColorParam k4 =6.31374
+astColorParam k5 =6.98183
+astColorParam k6 =6.27088
+
+
+
+T_sf= 
+
+  0.0940772  0.00923212    0.995522           0
+   0.995197   0.0263008  -0.0942904           0
+ -0.0270535    0.999611 -0.00671348   -0.455577
+         -0          -0           0           1
+
