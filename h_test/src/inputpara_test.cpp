@@ -1,13 +1,9 @@
 
 #include <iostream>
-
 #include <string>
-
- 
-
+#include <string.h>
 using namespace std;
 
- 
 
 void ShowUsage()
 
@@ -25,10 +21,8 @@ void ShowUsage()
 
     cout << " --help                            Print this help." << endl;
 
- 
 
     return;
-
 }
 
  
@@ -42,19 +36,14 @@ int main(int argc, char *argv[])
     if (argc < 2)
 
     {
-
         cout << "No arguments, you MUST give an argument at least!" << endl;
 
         ShowUsage();
 
-        
-
         return -1;
-
     }
 
  
-
     int nOptionIndex = 1;
 
     string strName;
@@ -62,8 +51,6 @@ int main(int argc, char *argv[])
     string strOccupation;
 
     string strCamp;
-
- 
 
     while (nOptionIndex < argc)
 
@@ -76,6 +63,7 @@ int main(int argc, char *argv[])
         {
 
             strName = &argv[nOptionIndex][7];
+            //strName = argv[nOptionIndex][7];
 
         }
 

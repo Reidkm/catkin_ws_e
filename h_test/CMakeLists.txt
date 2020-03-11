@@ -313,6 +313,9 @@ link_directories(
 add_executable(camera_test src/camera_test.cpp)
 target_link_libraries(camera_test    ${OpenCV_LIBS})
 
+add_executable(inputpara_test src/inputpara_test.cpp)
+#target_link_libraries(camera_test    ${OpenCV_LIBS})
+
 #1
 
 
