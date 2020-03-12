@@ -63,6 +63,7 @@ int main(int argc, char *argv[])
         {
 
             strName = &argv[nOptionIndex][7];
+            strName = argv[nOptionIndex]+7 ;
             //strName = argv[nOptionIndex][7];
 
         }
