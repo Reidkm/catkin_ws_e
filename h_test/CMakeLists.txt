@@ -310,12 +310,15 @@ link_directories(
 #add_executable(d435i_image src/d435i_opencv.cpp)
 #target_link_libraries(d435i_image   ${realsense2_LIBRARY} ${OpenCV_LIBS})
 
-add_executable(camera_test src/camera_test.cpp)
-target_link_libraries(camera_test    ${OpenCV_LIBS})
+#add_executable(camera_test src/camera_test.cpp)
+#target_link_libraries(camera_test    ${OpenCV_LIBS})
 
-add_executable(inputpara_test src/inputpara_test.cpp)
+#add_executable(inputpara_test src/inputpara_test.cpp)
 #target_link_libraries(camera_test    ${OpenCV_LIBS})
 
 #1
+add_executable(test_yaml src/test_yaml.cpp)
+target_link_libraries(test_yaml    ${OpenCV_LIBS})
+
 
 

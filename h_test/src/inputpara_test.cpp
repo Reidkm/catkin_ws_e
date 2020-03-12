@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 #include <string.h>
+#include <sstream>
+
 using namespace std;
 
 
@@ -42,6 +44,37 @@ int main(int argc, char *argv[])
 
         return -1;
     }
+    stringstream ss;
+
+    string str;
+
+    //std::string strSystime="";
+    time_t systime=time(NULL);  
+
+    struct tm *now = localtime(&systime);
+    
+    int hour = now->tm_hour;
+    int min  = now->tm_min;
+    int sec  = now->tm_sec;
+    int year = now->tm_year + 1900;
+    int month = now->tm_mon + 1;
+    int day = now->tm_mday;
+    cout << year<< "-" << month<< "-" << day 
+    <<  " " << hour << ":" << min<< ":" << sec << endl;
+ 
+    //ss<<systime; 
+    //ss >> str;
+    //cout  << "time is " << str << endl;
+
+    //cout << "time is " << ctime(&systime) << endl;
+    //strSystime=ss.str();
+
+    //time_t timep;
+   
+    //time(&timep); /*获取time_t类型当前时间*/   
+    /*转换为常见的字符串：Fri Jan 11 17:04:08 2008*/
+    //printf("%s", ctime(&timep));
+    //return 0;
 
  
     int nOptionIndex = 1;
