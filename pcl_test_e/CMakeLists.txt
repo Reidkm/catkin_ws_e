@@ -235,9 +235,9 @@ ADD_EXECUTABLE(pnp src/pnp.cpp)
 TARGET_LINK_LIBRARIES( pnp ${OpenCV_LIBS} 
 ${PCL_LIBRARIES} )
 
-#ADD_EXECUTABLE(generate_pcd src/generate_pcd.cpp)
-#TARGET_LINK_LIBRARIES( generate_pcd ${OpenCV_LIBS} 
-#    ${PCL_LIBRARIES}  )
+ADD_EXECUTABLE(generate_pcd src/generate_pcd.cpp)
+TARGET_LINK_LIBRARIES( generate_pcd ${OpenCV_LIBS} 
+    ${PCL_LIBRARIES}  )
 
 #ADD_EXECUTABLE(PointCloudsJoint src/PointCloudsJoint.cpp)
 #TARGET_LINK_LIBRARIES( PointCloudsJoint ${OpenCV_LIBS} 
