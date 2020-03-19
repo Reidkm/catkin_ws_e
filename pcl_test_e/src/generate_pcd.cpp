@@ -138,12 +138,44 @@ int main( int argc, char** argv )
     vector<Point2f> image_points_test;
     model_points_test.push_back(Point3f(200,0,0));
 
+
+    //cout << rotation_vector_test << "\n"
+    //     << translation_vector_test << "\n"
+    //     << model_points_for_line[0] << endl;
     // projectPoints func 
     projectPoints(model_points_test, rotation_vector, translation_vector, K, distCoeffs, image_points_test);
 
     for(int i=0; i < image_points_test.size(); i++)
     {
         circle(rgb, image_points_test[i], 3, Scalar(0,0,255), -1);
+
+    }
+    // 4 points in world coordinate 
+    vector<Point3f> model_points_for_line;
+    model_points_for_line.push_back(Point3d(-1,0.471,1));
+    model_points_for_line.push_back(Point3d(-1,0.471,3));
+    model_points_for_line.push_back(Point3d(1,0.471,3));
+    model_points_for_line.push_back(Point3d(1,0.471,1));
+    
+    //world coordinate is no rotate and translate relative to camera coordinate if setting rvec=tvec=(0,0,0) 
+    Mat rotation_vector_for_line = (cv::Mat_<double>(3, 1) <<  0, 0, 0);
+    Mat translation_vector_for_line = (cv::Mat_<double>(3, 1) <<  0, 0, 0);
+
+    //vector of 2dimage points
+    vector<Point2f> image_points_for_line;
+
+    //project 3d points to 2dimage
+    projectPoints(model_points_for_line, rotation_vector_for_line, translation_vector_for_line, K, distCoeffs, image_points_for_line);
+    
+    //mark line on 2dimage 
+    for(int i=0; i < image_points_for_line.size(); i++)
+    {
+        //circle(rgb, image_points_for_line[i], 3, Scalar(0,0,255), -1);
+        if (i<3)
+        {
+          line(rgb,image_points_for_line[i],image_points_for_line[i+1],Scalar(0,0,255),1,CV_AA);
+        }
+        cout << "image_points_for_line  " << i  <<  " is" << image_points_for_line[i] << endl;
 
     }
 
