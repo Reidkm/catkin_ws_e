@@ -317,8 +317,11 @@ link_directories(
 #target_link_libraries(camera_test    ${OpenCV_LIBS})
 
 #1
-add_executable(test_yaml src/test_yaml.cpp)
-target_link_libraries(test_yaml    ${OpenCV_LIBS})
+#add_executable(test_yaml src/test_yaml.cpp)
+#target_link_libraries(test_yaml    ${OpenCV_LIBS})
+
+add_executable(test_image_bit_operate src/test_image_bit_operate.cpp)
+target_link_libraries(test_image_bit_operate    ${OpenCV_LIBS})
 
 
 
