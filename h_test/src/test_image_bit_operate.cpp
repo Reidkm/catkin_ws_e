@@ -72,6 +72,11 @@ int main(int argc, const char** argv) {
 			// 	uchar rValue = pValue[3*col + 2];
                 // const uchar *uc_pixel = ptr;
                 // int a = uc_pixel[0];
+
+                //把高8位与低8位结合
+    // num_three = n_left;
+    // num_three <<= 8; //恢复高位
+    // num_three |= n_right; //或上低位
         // int b = uc_pixel[1];
         // int c = uc_pixel[2];
         // 不使用中间指针
