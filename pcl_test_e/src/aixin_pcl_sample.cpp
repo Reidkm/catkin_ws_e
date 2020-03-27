@@ -12,7 +12,7 @@
 #include <iostream>
 #include <fstream>
 #include <istream>
-#include<sstream>
+#include <sstream>
 #include <opencv2/core/core.hpp>  
 #include <opencv2/highgui/highgui.hpp>  
 #include <opencv2/imgproc/imgproc.hpp> 
@@ -28,9 +28,9 @@ typedef struct XYZRGB
 }XYZRGB;
 enum REGISTRATION_TYPE
 {
-	setImageRegistrationMode_OFF_API = 1, //¶ÔÆë½Ó¿ÚÎ´´ò¿ªÊ±£¬Ê¹ÓÃopenni API À´×ö¶ÔÆë
-	setImageRegistrationMode_OFF_CAMERAPARAM =2,// ¶ÔÆë½Ó¿ÚÎ´´ò¿ªÊ±£¬Í¨¹ýÏà»ú²ÎÊýÀ´×ö¶ÔÆë£»
-	setImageRegistrationMode_ON_COLOR2DEPTH =3, //´ò¿ª¶ÔÆë½Ó¿Ú×Ô¶¯¶ÔÆë£»
+	setImageRegistrationMode_OFF_API = 1, //ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½Î´ï¿½ï¿½Ê±ï¿½ï¿½Ê¹ï¿½ï¿½openni API ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	setImageRegistrationMode_OFF_CAMERAPARAM =2,// ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½Î´ï¿½ï¿½Ê±ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë£»
+	setImageRegistrationMode_ON_COLOR2DEPTH =3, //ï¿½ò¿ª¶ï¿½ï¿½ï¿½Ó¿ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ë£»
 };
 CamIntrinsicParam* GetColorInstrinsicParamByResolution(int nWidth, int nHeight, AXonLinkCamParam* allParam)
 {
@@ -355,7 +355,7 @@ int main(int argc, char** argv)
 	}
 	if (depthFrame.isValid())
 	{
-		std::vector<int> compression_params; //Depth±£´æµ½16Î»ÎÞÑ¹ËõPNG
+		std::vector<int> compression_params; //Depthï¿½ï¿½ï¿½æµ½16Î»ï¿½ï¿½Ñ¹ï¿½ï¿½PNG
 		compression_params.push_back(CV_IMWRITE_PNG_COMPRESSION);
 		compression_params.push_back(0);
 		cv::Mat depthMat = cv::Mat(depthFrame.getHeight(), depthFrame.getWidth(), CV_16UC1, (void*)depthFrame.getData());
