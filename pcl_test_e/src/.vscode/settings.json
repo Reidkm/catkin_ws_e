@@ -3,6 +3,10 @@
         "iostream": "cpp",
         "random": "cpp",
         "ostream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "core": "cpp",
+        "bitset": "cpp",
+        "chrono": "cpp",
+        "algorithm": "cpp"
     }
 }

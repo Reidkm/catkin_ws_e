@@ -231,13 +231,13 @@ add_definitions(${PCL_DEFINITIONS})
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
-ADD_EXECUTABLE(pnp src/pnp.cpp)
-TARGET_LINK_LIBRARIES( pnp ${OpenCV_LIBS} 
-${PCL_LIBRARIES} )
+#ADD_EXECUTABLE(pnp src/pnp.cpp)
+#TARGET_LINK_LIBRARIES( pnp ${OpenCV_LIBS} 
+#${PCL_LIBRARIES} )
 
-ADD_EXECUTABLE(generate_pcd src/generate_pcd.cpp)
-TARGET_LINK_LIBRARIES( generate_pcd ${OpenCV_LIBS} 
-    ${PCL_LIBRARIES}  )
+#ADD_EXECUTABLE(generate_pcd src/generate_pcd.cpp)
+#TARGET_LINK_LIBRARIES( generate_pcd ${OpenCV_LIBS} 
+#    ${PCL_LIBRARIES}  )
 
 #ADD_EXECUTABLE(PointCloudsJoint src/PointCloudsJoint.cpp)
 #TARGET_LINK_LIBRARIES( PointCloudsJoint ${OpenCV_LIBS} 
@@ -261,6 +261,21 @@ TARGET_LINK_LIBRARIES( generate_pcd ${OpenCV_LIBS}
 #TARGET_LINK_LIBRARIES( pointcloud_RT  ${PCL_LIBRARIES} ${PCL_COMMON_LIBRARIES} ${PCL_IO_LIBRARIES} )
 #TARGET_LINK_LIBRARIES( pointcloud_RT  ${PCL_LIBRARIES}  )
 
+
+#ADD_EXECUTABLE(generate_pointcloud src/generate_pointcloud.cpp)
+#TARGET_LINK_LIBRARIES( generate_pointcloud ${OpenCV_LIBS} 
+#                                        ${PCL_LIBRARIES}  
+#					${EIGEN3_LIBS} )
+
+#ADD_EXECUTABLE(calibration_pointcloud_axon src/calibration_pointcloud_axon.cpp)
+#TARGET_LINK_LIBRARIES( calibration_pointcloud_axon ${OpenCV_LIBS} 
+#                                        ${PCL_LIBRARIES}  
+#					${EIGEN3_LIBS} )
+
+ADD_EXECUTABLE(calibration_pointcloud src/calibration_pointcloud.cpp)
+TARGET_LINK_LIBRARIES( calibration_pointcloud ${OpenCV_LIBS} 
+                                        ${PCL_LIBRARIES}  
+					${EIGEN3_LIBS} )
 
 
 
