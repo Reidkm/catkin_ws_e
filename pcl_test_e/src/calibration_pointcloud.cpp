@@ -32,10 +32,10 @@ typedef pcl::PointCloud<PointT> PointCloud;
 
 // 相机内参
 const double camera_factor = 1000;
-const double camera_cx = 324.69931;
-const double camera_cy = 239.38878;
-const double camera_fx = 412.57083;
-const double camera_fy = 414.97961;
+// const double camera_cx = 324.69931;
+// const double camera_cy = 239.38878;
+// const double camera_fx = 412.57083;
+// const double camera_fy = 414.97961;
 
 // const double camera_cx = 162.82896;
 // const double camera_cy = 124.79063;
@@ -87,6 +87,8 @@ int main( int argc, char** argv )
     //Mat distCoeffs =(cv::Mat_<double>(4, 1) <<-0.046613900786771 , 1.103579994527246, -0.002365556225951 , 2.388855928112236e-04);
     // checkerboard size
     Size board_size = Size(4,7);
+
+    cout  << K.at<double>(0 , 2)<< endl;
 
     // image size
     // Size image_size;  
@@ -159,17 +161,17 @@ int main( int argc, char** argv )
     cv::Mat translation_vector;
     
     //calculate transform matrix by pnp
-    solvePnP(model_points, image_points_buf_new, K, distCoeffs, rotation_vector, translation_vector);
+    cv::solvePnP(model_points, image_points_buf_new, K, distCoeffs, rotation_vector, translation_vector);
 
     // RANSAC parameters
 
-    int iterationsCount = 500;        // number of Ransac iterations.
+    // int iterationsCount = 500;        // number of Ransac iterations.
 
-    float reprojectionError = 0.1;    // maximum allowed distance to consider it an inlier.
+    // float reprojectionError = 0.1;    // maximum allowed distance to consider it an inlier.
 
-    float confidence = 0.95;          // ransac successful confidence.
+    // float confidence = 0.95;          // ransac successful confidence.
 
-    cv::Mat inliers;
+    // cv::Mat inliers;
 
     // cv::solvePnPRansac(model_points, 
     //                   image_points_buf_new,
@@ -351,8 +353,11 @@ int main( int argc, char** argv )
             // 计算这个点的空间坐标
             //p.z = double(d) / camera_factor;
             p.z = double(d);
-            p.x = (n - camera_cx) * p.z / camera_fx;
-            p.y = (m - camera_cy) * p.z / camera_fy;
+            // p.x = (n - camera_cx) * p.z / camera_fx;
+            // p.y = (m - camera_cy) * p.z / camera_fy;
+
+            p.x = (n - K.at<double>(0 , 2)) * p.z / K.at<double>(0 , 0);
+            p.y = (m - K.at<double>(1 , 2)) * p.z / K.at<double>(1 , 1);
             
             // 从rgb图像中获取它的颜色
             // rgb是三通道的BGR格式图，所以按下面的顺序获取颜色
@@ -428,7 +433,7 @@ int main( int argc, char** argv )
       viewer->spinOnce ();
     }
     cloud->points.clear();
-    cout<<"Point cloud saved."<<endl;
+    cout<<"Point cloud clear"<<endl;
     return 0;
 }
 // Tcw_inverse = 
