@@ -112,17 +112,17 @@ int main( int argc, char** argv )
         find4QuadCornerSubpix(view_gray,image_points_buf,Size(5,5)); //对粗提取的角点进行精确化
         
         //push corners to vector 
-        image_points_buf_new.push_back(image_points_buf[0]);
-        image_points_buf_new.push_back(image_points_buf[1]);
-        image_points_buf_new.push_back(image_points_buf[4]);
-        image_points_buf_new.push_back(image_points_buf[5]);
+        // image_points_buf_new.push_back(image_points_buf[0]);
+        // image_points_buf_new.push_back(image_points_buf[1]);
+        // image_points_buf_new.push_back(image_points_buf[4]);
+        // image_points_buf_new.push_back(image_points_buf[5]);
         // image_points_buf_new.push_back(image_points_buf[24]);
         // image_points_buf_new.push_back(image_points_buf[25]);
         // image_points_buf_new.push_back(image_points_buf[26]);
         // image_points_buf_new.push_back(image_points_buf[27]);
         
         //draw corners on image
-        drawChessboardCorners(rgb,Size(2,2),image_points_buf_new,true); //用于在图片中标记角点
+        drawChessboardCorners(rgb,board_size,image_points_buf,true); //用于在图片中标记角点
     }
     else
     {
@@ -132,27 +132,27 @@ int main( int argc, char** argv )
 
 
     // corners in world coordinate
-    vector<Point3d> model_points;
-    model_points.push_back(Point3d(0.0f, 0.0f, 0.0f));
-    model_points.push_back(Point3d(100.0f, 0.0f, 0.0f));
-    model_points.push_back(Point3d(0.0f, 100.0f, 0.0f));
-    model_points.push_back(Point3d(100.0f, 100.0f, 0.0f));
+    vector<Point3f> model_points;
+    // model_points.push_back(Point3d(0.0f, 0.0f, 0.0f));
+    // model_points.push_back(Point3d(100.0f, 0.0f, 0.0f));
+    // model_points.push_back(Point3d(0.0f, 100.0f, 0.0f));
+    // model_points.push_back(Point3d(100.0f, 100.0f, 0.0f));
     // model_points.push_back(Point3d(0.0f, 600.0f, 0.0f));
     // model_points.push_back(Point3d(100.0f, 600.0f, 0.0f));
     // model_points.push_back(Point3d(200.0f, 600.0f, 0.0f));
     // model_points.push_back(Point3d(300.0f, 600.0f, 0.0f));
-    // for (int i = 0; i < board_size.height ;i++)
-    // {
-    //   for (int j = 0; j < board_size.width; j++)
-    //   {
-    //     model_points.push_back(Point3d(float(j*100), float(i*100), 0.0f));
-    //   }
+    for (int i = 0; i < board_size.height ;i++)
+    {
+      for (int j = 0; j < board_size.width; j++)
+      {
+        model_points.push_back(Point3f(float(j*100), float(i*100), 0.0f));
+      }
       
-    // }
-    // for (int i = 0; i < model_points.size(); i++)
-    // {
-    //   cout << model_points[i] << endl;
-    // }
+    }
+    for (int i = 0; i < model_points.size(); i++)
+    {
+      cout << model_points[i] << endl;
+    }
     
     
 
@@ -161,7 +161,7 @@ int main( int argc, char** argv )
     cv::Mat translation_vector;
     
     //calculate transform matrix by pnp
-    cv::solvePnP(model_points, image_points_buf_new, K, distCoeffs, rotation_vector, translation_vector);
+    cv::solvePnP(model_points, image_points_buf, K, distCoeffs, rotation_vector, translation_vector,cv::SOLVEPNP_ITERATIVE);
 
     // RANSAC parameters
 
@@ -174,7 +174,7 @@ int main( int argc, char** argv )
     // cv::Mat inliers;
 
     // cv::solvePnPRansac(model_points, 
-    //                   image_points_buf_new,
+    //                   image_points_buf,
     //                   K , 
     //                   distCoeffs, 
     //                   rotation_vector,
@@ -184,7 +184,7 @@ int main( int argc, char** argv )
     //                   reprojectionError,
     //                   confidence,
     //                   inliers,
-    //                   cv::SOLVEPNP_UPNP);
+    //                  cv::SOLVEPNP_UPNP);
     // SOLVEPNP_ITERATIVE
     // SOLVEPNP_P3P
     // SOLVEPNP_EPNP
@@ -198,10 +198,10 @@ int main( int argc, char** argv )
     // test rotate vector and translation_vector by reprojection
     vector<Point3f> model_points_test;
     vector<Point2f> image_points_test;
-    model_points_test.push_back(Point3f(200,0,0));
-    model_points_test.push_back(Point3f(300,0,0));
-    model_points_test.push_back(Point3f(400,0,0));
-    model_points_test.push_back(Point3f(0,0,400));
+     //model_points_test.push_back(Point3f(200,0,0));
+    // model_points_test.push_back(Point3f(300,0,0));
+    // model_points_test.push_back(Point3f(400,0,0));
+    // model_points_test.push_back(Point3f(0,0,400));
     // model_points_test.push_back(Point3f(0,-100,0));
     // model_points_test.push_back(Point3f(0,0,200));
 
@@ -210,13 +210,14 @@ int main( int argc, char** argv )
     //     << translation_vector_test << "\n"
     //     << model_points_for_line[0] << endl;
     // projectPoints func 
-    projectPoints(model_points_test, rotation_vector, translation_vector, K, distCoeffs, image_points_test);
+    projectPoints(model_points, rotation_vector, translation_vector, K, distCoeffs, image_points_test);
     // circle(rgb, image_points_test[0], 3, Scalar(0,0,255), -1);
     // circle(rgb, image_points_test[1], 3, Scalar(0,255,0), -1);
     // circle(rgb, image_points_test[2], 3, Scalar(255,0,0), -1);
 
     for(int i=0; i < image_points_test.size(); i++)
     {
+        
         circle(rgb, image_points_test[i], 3, Scalar(0,0,255), -1);
 
     }
